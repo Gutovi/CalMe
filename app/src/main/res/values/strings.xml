@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">CalMe</string>
+    <string name="settingsButton">Settings</string>
+    <string name="startDescription">Start</string>
+    <string name="TutorialButton">Tutorial</string>
+
+    <string name="FeelingQuestion">How do you feel?</string>
+    <string name="FeelingConfirmation">Are you feeling</string>
+    <string name="sad">Sad</string>
+    <string name="calm">Calm</string>
+    <string name="mad">Mad</string>
+    <string name="scared">Scared</string>
+    <string name="frustrated">Frustrated</string>
+    <string name="hurt">Hurt</string>
+
+    <string name="CalmDown">Let\'s calm down with...</string>
+    <string name="BalloonBreathing">Balloon Breathing</string>
+    <string name="FidgetToy">Fidget Toy</string>
+    <string name="Counting">Counting to 10</string>
+    <string name="DrainBreathing">Drain Breathing</string>
+    <string name="Drawing">Drawing</string>
+    <string name="Yoga">Yoga</string>
+</resources>

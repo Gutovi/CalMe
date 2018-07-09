@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">CalmaMe</string>
+    <string name="settingsButton">Configuración</string>
+    <string name="startDescription">Empezar</string>
+    <string name="TutorialButton">Tutorial</string>
+
+    <string name="FeelingQuestion">¿Cómo te sentís?</string>
+    <string name="FeelingConfirmation">¿Te sentís</string>
+    <string name="sad">Triste</string>
+    <string name="calm">Tranquilo</string>
+    <string name="mad">Enojado</string>
+    <string name="scared">Asustado</string>
+    <string name="frustrated">Frustrado</string>
+    <string name="hurt">Lastimado</string>
+
+    <string name="CalmDown">Probemos calmarnos...</string>
+    <string name="BalloonBreathing">Respirando como globo</string>
+    <string name="FidgetToy">con un juguete anti-estrés</string>
+    <string name="Counting">Contando hasta 10</string>
+    <string name="DrainBreathing">Respirando como canilla</string>
+    <string name="Drawing">Dibujando</string>
+    <string name="Yoga">Haciendo yoga</string>
+</resources>
