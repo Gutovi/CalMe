@@ -14,73 +14,102 @@
 
         <Button
             android:id="@+id/btnBlack"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/black" />
-
-        <Button
-            android:id="@+id/btnWhite"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@android:color/white" />
+            android:background="@android:color/black"
+            android:contentDescription="@string/nameBlack" />
 
         <Button
             android:id="@+id/btnGray"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/darker_gray" />
+            android:background="@color/PaintGray"
+            android:contentDescription="@string/nameGray" />
+
+        <Button
+            android:id="@+id/btnWhite"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:contentDescription="@string/nameWhite" />
 
         <Button
             android:id="@+id/btnRed"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#d50000" />
+            android:background="@color/PaintRed"
+            android:contentDescription="@string/nameRed" />
 
         <Button
             android:id="@+id/btnOrange"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#ff9100" />
+            android:background="@color/PaintOrange"
+            android:contentDescription="@string/nameOrange" />
 
         <Button
             android:id="@+id/btnYellow"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#fdd835" />
+            android:background="@color/PaintYellow"
+            android:contentDescription="@string/nameYellow" />
 
         <Button
             android:id="@+id/btnGreen"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#64dd17" />
+            android:background="@color/PaintGreen"
+            android:contentDescription="@string/nameGreen" />
 
         <Button
             android:id="@+id/btnBlue"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#00bcd4" />
+            android:background="@color/PaintCyan"
+            android:contentDescription="@string/nameSkyBlue" />
 
         <Button
             android:id="@+id/btnIndigo"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#1565c0" />
+            android:background="@color/PaintBlue"
+            android:contentDescription="@string/nameDeepBlue" />
 
         <Button
             android:id="@+id/btnViolet"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#5e35b1" />
+            android:background="@color/PaintPurple"
+            android:contentDescription="@string/nameViolet" />
+
+        <Button
+            android:id="@+id/btnPink"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/PaintPink"
+            android:contentDescription="@string/namePink" />
 
     </LinearLayout>
 
@@ -99,44 +128,58 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="1.09"
             android:orientation="horizontal">
 
+            <ToggleButton
+                android:id="@+id/btnBack-Pen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".75"
+                android:checked="false"
+                android:contentDescription="@string/explanationPenBGSwitch"
+                android:fontFamily="casual"
+                android:textOff="@string/namePenColor"
+                android:textOn="@string/nameBackgroundColor"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
             <Button
-                android:id="@+id/btnErase"
+                android:id="@+id/btnSave"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:drawable/checkbox_off_background" />
+                android:background="@android:drawable/ic_menu_save"
+                android:contentDescription="@string/nameSave" />
 
             <Button
-                android:id="@+id/btnText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:drawable/ic_menu_sort_alphabetically" />
-
-            <Button
-                android:id="@+id/btnUndo2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:drawable/ic_menu_revert" />
-
-            <Button
-                android:id="@+id/btnRedo"
+                android:id="@+id/btnUndo"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:drawable/ic_menu_revert"
+                android:contentDescription="@string/nameUndo" />
+
+            <Button
+                android:id="@+id/btnRedo"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:drawable/ic_menu_revert"
+                android:contentDescription="@string/nameRedo"
                 android:scaleX="-1" />
 
             <Button
                 android:id="@+id/btnClear"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:drawable/ic_menu_delete" />
+                android:background="@android:drawable/ic_menu_delete"
+                android:contentDescription="@string/nameClear" />
         </LinearLayout>
     </LinearLayout>
 

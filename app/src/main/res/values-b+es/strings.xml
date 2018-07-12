@@ -18,6 +18,28 @@
     <string name="FidgetToy">con un juguete anti-estrés</string>
     <string name="Counting">Contando hasta 10</string>
     <string name="DrainBreathing">Respirando como grifo</string>
+    <string name="BookReading">Leyendo un libro</string>
     <string name="Drawing">Dibujando</string>
     <string name="Yoga">Haciendo yoga</string>
+
+    <string name="nameEraser">Goma de Borrar</string>
+    <string name="nameSave">Guardar</string>
+    <string name="nameUndo">Deshacer</string>
+    <string name="nameRedo">Rehacer</string>
+    <string name="nameClear">Limpiar Pantalla</string>
+    <string name="nameBlack">Negro</string>
+    <string name="nameGray">Gris</string>
+    <string name="nameWhite">Blanco</string>
+    <string name="nameRed">Rojo</string>
+    <string name="nameOrange">Anaranjado</string>
+    <string name="nameYellow">Amarillo</string>
+    <string name="nameGreen">Verde</string>
+    <string name="nameSkyBlue">Celeste</string>
+    <string name="nameDeepBlue">Azul</string>
+    <string name="nameViolet">Violeta</string>
+    <string name="namePink">Rosado</string>
+
+    <string name="nameBackgroundColor">Color de Fondo</string>
+    <string name="explanationPenBGSwitch">Cambio de Color de Fondo y de Lápiz</string>
+    <string name="namePenColor">Color de Lápiz</string>
 </resources>

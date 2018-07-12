@@ -18,6 +18,28 @@
     <string name="FidgetToy">Fidget Toy</string>
     <string name="Counting">Counting to 10</string>
     <string name="DrainBreathing">Drain Breathing</string>
+    <string name="BookReading">Reading a Book</string>
     <string name="Drawing">Drawing</string>
     <string name="Yoga">Yoga</string>
+
+    <string name="nameEraser">Eraser</string>
+    <string name="nameSave">Save</string>
+    <string name="nameUndo">Undo</string>
+    <string name="nameRedo">Redo</string>
+    <string name="nameClear">Clear All</string>
+    <string name="nameBlack">Black</string>
+    <string name="nameGray">Gray</string>
+    <string name="nameWhite">White</string>
+    <string name="nameRed">Red</string>
+    <string name="nameOrange">Orange</string>
+    <string name="nameYellow">Yellow</string>
+    <string name="nameGreen">Green</string>
+    <string name="nameSkyBlue">Sky Blue</string>
+    <string name="nameDeepBlue">Deep Blue</string>
+    <string name="nameViolet">Violet</string>
+    <string name="namePink">Pink</string>
+
+    <string name="nameBackgroundColor">Background Color</string>
+    <string name="explanationPenBGSwitch">Background Color and Pen Color Switch</string>
+    <string name="namePenColor">Pen Color</string>
 </resources>
