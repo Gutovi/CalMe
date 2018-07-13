@@ -15,7 +15,7 @@
 
     <string name="CalmDown">Probemos calmarnos...</string>
     <string name="BalloonBreathing">Respirando como globo</string>
-    <string name="FidgetToy">con un juguete anti-estrés</string>
+    <string name="FidgetToy">con juguetes antiestrés</string>
     <string name="Counting">Contando hasta 10</string>
     <string name="DrainBreathing">Respirando como canilla</string>
     <string name="BookReading">Leyendo un libro</string>
@@ -42,4 +42,19 @@
     <string name="nameBackgroundColor">Color de Fondo</string>
     <string name="explanationPenBGSwitch">Cambio de Color de Fondo y de Lápiz</string>
     <string name="namePenColor">Color de Lápiz</string>
+
+    <string name="lblCounting">¡Contá conmigo!</string>
+    <string name="one">¡Uno!</string>
+    <string name="two">¡Dos!</string>
+    <string name="three">¡Tres!</string>
+    <string name="four">¡Cuatro!</string>
+    <string name="five">¡Cinco!</string>
+    <string name="six">¡Seis!</string>
+    <string name="seven">¡Siete!</string>
+    <string name="eight">¡Ocho!</string>
+    <string name="nine">¡Nueve!</string>
+    <string name="ten">¡Diez!</string>
+
+    <string name="again">De Vuelta</string>
+    <string name="go_back">Volver</string>
 </resources>

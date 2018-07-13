@@ -2,14 +2,21 @@ package com.example.gutovi.calme;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.os.Environment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.android.graphics.CanvasView;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Random;
 
 public class Paint extends AppCompatActivity {
 
@@ -26,7 +33,7 @@ public class Paint extends AppCompatActivity {
         this.canvas = (CanvasView) this.findViewById(R.id.canvas);
 
         //this.canvas.setDrawer(CanvasView.Drawer.PEN);
-        this.canvas.setPaintStrokeWidth(10F);
+        this.canvas.setPaintStrokeWidth(15F);
         this.canvas.setOpacity(255);
 
         Button btnUndo = findViewById(R.id.btnUndo);
@@ -153,10 +160,31 @@ public class Paint extends AppCompatActivity {
         if(this.canvas.canRedo()) this.canvas.redo();
     }
     void Clear(){
-        this.canvas.clearTovi(this.canvas.getBaseColor(),this.canvas.getWidth(),this.canvas.getHeight());
+        while (this.canvas.canUndo()) this.canvas.undo();
+        //this.canvas.clearTovi(this.canvas.getBaseColor(),this.canvas.getWidth(),this.canvas.getHeight());
     }
-    void Save(){
+    void Save() {
         Bitmap bitmap = this.canvas.getBitmap();
+
+        String root = Environment.getExternalStorageDirectory().toString();
+        File newDir = new File(root + "/your folder name");
+        newDir.mkdirs();
+        Random gen = new Random();
+        int n = 10000;
+        n = gen.nextInt(n);
+        String fotoname = "Photo-" + n + ".jpg";
+        File file = new File(newDir, fotoname);
+        if (file.exists()) file.delete();
+        try {
+            FileOutputStream out = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 90, out);
+            out.flush();
+            out.close();
+            Toast.makeText(getApplicationContext(), "Saved to your folder", Toast.LENGTH_SHORT).show();
+
+        } catch (Exception e) {
+
+        }
     }
 
 

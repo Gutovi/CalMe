@@ -16,4 +16,18 @@
         <item name="android:navigationBarColor">@color/colorPrimaryDarkest</item>
     </style>
 
+    <style name="CalMeText" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:fontFamily">casual</item>
+        <item name="android:textColor">@color/colorPrimaryDarkest</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+
+    </style>
+
+    <style name="CalMeTitle" parent="CalMeText">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
 </resources>

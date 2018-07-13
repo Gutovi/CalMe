@@ -15,7 +15,7 @@
 
     <string name="CalmDown">Let\'s calm down with...</string>
     <string name="BalloonBreathing">Balloon Breathing</string>
-    <string name="FidgetToy">Fidget Toy</string>
+    <string name="FidgetToy">A Fidget Toy</string>
     <string name="Counting">Counting to 10</string>
     <string name="DrainBreathing">Drain Breathing</string>
     <string name="BookReading">Reading a Book</string>
@@ -42,4 +42,19 @@
     <string name="nameBackgroundColor">Background Color</string>
     <string name="explanationPenBGSwitch">Background Color and Pen Color Switch</string>
     <string name="namePenColor">Pen Color</string>
+
+    <string name="lblCounting">Let\'s Count Together!</string>
+    <string name="one">One!</string>
+    <string name="two">Two!</string>
+    <string name="three">Three!</string>
+    <string name="four">Four!</string>
+    <string name="five">Five!</string>
+    <string name="six">Six!</string>
+    <string name="seven">Seven!</string>
+    <string name="eight">Eight!</string>
+    <string name="nine">Nine!</string>
+    <string name="ten">Ten!</string>
+
+    <string name="again">Again</string>
+    <string name="go_back">Go Back</string>
 </resources>
