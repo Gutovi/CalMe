@@ -22,7 +22,7 @@
             android:background="@android:color/transparent"
             android:contentDescription="@string/startDescription"
             android:scaleType="fitCenter"
-            app:srcCompat="@android:drawable/ic_media_play" />
+            app:srcCompat="@android:drawable/ic_menu_slideshow" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <TextView
             android:id="@+id/lblHowFeeling"
@@ -81,7 +81,7 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/calm"
                 android:scaleType="fitCenter"
-                app:srcCompat="@android:drawable/sym_def_app_icon" />
+                app:srcCompat="@drawable/avd_yes" />
 
             <ImageButton
                 android:id="@+id/btnEmotion2"
@@ -254,7 +254,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/lblWhatActivity"
@@ -495,10 +495,11 @@
     <LinearLayout
         android:id="@+id/lytDone"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
         android:gravity="bottom"
         android:orientation="horizontal"
-        android:visibility="invisible">
+        android:visibility="gone">
 
         <Button
             android:id="@+id/btnGoBack"
@@ -518,6 +519,36 @@
             android:layout_weight="1"
             android:elevation="10dp"
             android:text="@string/again"
+            android:textAppearance="@style/CalMeText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lytCorrect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btnNo"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:elevation="10dp"
+            android:text="@string/no"
+            android:textAppearance="@style/CalMeText" />
+
+        <Button
+            android:id="@+id/btnYes"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:elevation="10dp"
+            android:text="@android:string/ok"
             android:textAppearance="@style/CalMeText" />
 
     </LinearLayout>
