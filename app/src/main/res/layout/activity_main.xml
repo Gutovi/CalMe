@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="?attr/colorPrimaryDark"
+                android:backgroundTint="@color/colorPrimaryDarkest"
                 android:elevation="10dp"
                 android:text="@string/settingsButton"
                 android:textColor="@android:color/white"
@@ -46,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="?attr/colorPrimaryDark"
+                android:backgroundTint="@color/colorPrimaryDarkest"
                 android:elevation="10dp"
                 android:text="@string/TutorialButton"
                 android:textColor="@android:color/white"
@@ -491,13 +491,75 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lytBalloon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/lblBreathe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lblBreathWithMe"
+            android:textAlignment="center"
+            android:textAppearance="@style/CalMeTitle"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgBalloon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:contentDescription="@string/lblBreathWithMe"
+            app:srcCompat="?android:attr/textSelectHandle" />
+
+        <TextView
+            android:id="@+id/lblBreathingState"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3.5"
+            android:text="@string/Ready"
+            android:textAlignment="center"
+            android:textAppearance="@style/CalMeTitle"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lytFindA"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/lblFind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textAppearance="@style/CalMeTitle"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgFind"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/lblFindToy"
+            app:srcCompat="@android:drawable/ic_menu_compass" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/lytDone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="5"
         android:gravity="bottom"
         android:orientation="horizontal"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <Button
             android:id="@+id/btnGoBack"

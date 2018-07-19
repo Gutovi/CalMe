@@ -62,4 +62,14 @@
     <string name="go_back">Go Back</string>
     <string name="no">No</string>
     <string name="yes">Yes</string>
+
+    <string name="lblBreathWithMe">Breath With Me!</string>
+    <string name="Ready">Ready?</string>
+    <string name="In">In...</string>
+    <string name="Out">Out...</string>
+    <string name="GoodJob">Good Job</string>
+
+    <string name="lblFindToy">Go Find A Toy!</string>
+
+    <string name="lblFindBook">Go Find A Book!</string>
 </resources>

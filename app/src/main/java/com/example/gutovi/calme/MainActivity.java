@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -24,6 +25,7 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
 
 
+    Boolean boolSpinnerActive = true;
 
     LinearLayout lytStart;
     LinearLayout lytEmotion;
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout lytActivity;
     LinearLayout lytDone;
     LinearLayout lytCounting;
+    LinearLayout lytBalloon;
+    LinearLayout lytFind;
     Button btnGoBack;
     Button btnDone;
     Button btnAgain;
@@ -64,8 +68,19 @@ public class MainActivity extends AppCompatActivity {
     TextView Number;
     TextView NumberName;
 
+    TextView lblBreathe;
+    TextView lblBreathingState;
+    ImageView imgBalloon;
+    AnimatedVectorDrawableCompat avdcBalloonHappy;
+    AnimatedVectorDrawableCompat avdcBalloonIn;
+    AnimatedVectorDrawableCompat avdcBalloonHold;
+    AnimatedVectorDrawableCompat avdcBalloonOut;
+
     CountDownTimer NumberCounter;
 
+
+    TextView lblFind;
+    ImageView imgFind;
 
 
     @Override
@@ -82,6 +97,14 @@ public class MainActivity extends AppCompatActivity {
         btnYes.setImageDrawable(avdcYes);
         btnNo.setImageDrawable(avdcNo);
 
+        /*
+        avdcBalloonIn = AnimatedVectorDrawableCompat.create(this, R.drawable.avd_balloonin);
+        avdcBalloonHappy = AnimatedVectorDrawableCompat.create(this, R.drawable.avd_balloonhappy);
+        avdcBalloonHold = AnimatedVectorDrawableCompat.create(this, R.drawable.avd_balloonhold);
+        avdcBalloonOut = AnimatedVectorDrawableCompat.create(this, R.drawable.avd_balloonout);
+
+        imgBalloon.setImageDrawable(avdcBalloonHappy);
+        */
 
         lytStart = findViewById(R.id.lytStart);
         lytEmotion = findViewById(R.id.lytChooseEmotion);
@@ -89,6 +112,8 @@ public class MainActivity extends AppCompatActivity {
         lytActivity = findViewById(R.id.lytChooseActivity);
         lytDone = findViewById(R.id.lytDone);
         lytCounting = findViewById(R.id.lytCount);
+        lytBalloon = findViewById(R.id.lytBalloon);
+        lytFind = findViewById(R.id.lytFindA);
         btnGoBack = findViewById(R.id.btnGoBack);
         btnDone = findViewById(R.id.btnDone);
         btnAgain = findViewById(R.id.btnAgain);
@@ -114,9 +139,14 @@ public class MainActivity extends AppCompatActivity {
         btnEmotion6 = findViewById(R.id.btnEmotion6);
         lblEmotion6 = findViewById(R.id.lblEmotion6);
 
-
         Number = findViewById(R.id.lblNumber);
         NumberName = findViewById(R.id.lblNumberName);
+
+        lblBreathe = findViewById(R.id.lblBreathe);
+        lblBreathingState = findViewById(R.id.lblBreathingState);
+
+        lblFind = findViewById(R.id.lblFind);
+        imgFind = findViewById(R.id.imgFind);
 
         NumberCounter = new CountDownTimer(15000, 1500) {
 
@@ -154,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
                 btnDone.setVisibility(View.VISIBLE);
             }
         };
+
 
         final ImageButton btnStart = findViewById(R.id.btnStart);
         btnStart.setOnClickListener(new View.OnClickListener() {
@@ -289,6 +320,8 @@ public class MainActivity extends AppCompatActivity {
                 Number.setText("0");
                 NumberName.setText(R.string.zero);
                 NumberCounter.cancel();
+                lytBalloon.setVisibility(View.GONE);
+                lblBreathingState.setText(R.string.Ready);
                 lytDone.setVisibility(View.GONE);
                 btnAgain.setEnabled(false);
                 btnAgain.setVisibility(View.INVISIBLE);
@@ -315,7 +348,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    void pressEmotionButton(ImageButton btn,TextView lbl, LinearLayout rowIm,LinearLayout rowNa) {
+    void pressEmotionButton(ImageButton btn, TextView lbl, LinearLayout rowIm, LinearLayout rowNa) {
         if (lytConfirm.getVisibility() != View.VISIBLE) {
             btnEmotion1.setVisibility(View.GONE);
             lblEmotion1.setVisibility(View.GONE);
@@ -364,16 +397,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    void pressActivityButton(String btn) {
-
-        if (btn.equals(getResources().getString(R.string.Drawing))) {
-            Intent intent = new Intent(MainActivity.this, Paint.class);
-            startActivity(intent);
-        } else if (btn.equals(getResources().getString(R.string.Counting))) {
-            Counting();
-        }
-    }
-
 
     void Counting() {
         lytActivity.setVisibility(View.GONE);
@@ -390,5 +413,112 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    void Ballooning() {
+        lytActivity.setVisibility(View.GONE);
+        lytBalloon.setVisibility(View.VISIBLE);
+        lblBreathingState.setText(R.string.Ready);
+        lytDone.setVisibility(View.VISIBLE);
+        btnAgain.setEnabled(false);
+        btnAgain.setVisibility(View.INVISIBLE);
+        btnDone.setEnabled(false);
+        btnDone.setVisibility(View.INVISIBLE);
+
+        /*
+        imgBalloon.setImageDrawable(avdcBalloonHappy);
+        avdcBalloonHappy.start();
+        avdcBalloonHappy.registerAnimationCallback(new Animatable2Compat.AnimationCallback() {
+            @Override
+            public void onAnimationEnd(Drawable drawable) {
+
+                lblBreathingState.setText(R.string.In);
+
+                imgBalloon.setImageDrawable(avdcBalloonIn);
+                avdcBalloonIn.start();
+                avdcBalloonIn.registerAnimationCallback(new Animatable2Compat.AnimationCallback() {
+                    @Override
+                    public void onAnimationEnd(Drawable drawable) {
+
+                        lblBreathingState.setText("");
+
+                        imgBalloon.setImageDrawable(avdcBalloonHold);
+                        avdcBalloonHold.start();
+                        avdcBalloonHold.registerAnimationCallback(new Animatable2Compat.AnimationCallback() {
+                            @Override
+                            public void onAnimationEnd(Drawable drawable) {
+
+                                lblBreathingState.setText(R.string.Out);
+
+                                imgBalloon.setImageDrawable(avdcBalloonOut);
+                                avdcBalloonOut.start();
+                                avdcBalloonOut.registerAnimationCallback(new Animatable2Compat.AnimationCallback() {
+                                    @Override
+                                    public void onAnimationEnd(Drawable drawable) {
+
+                                        lblBreathingState.setText(R.string.GoodJob);
+                                        btnAgain.setEnabled(true);
+                                        btnAgain.setVisibility(View.VISIBLE);
+                                        btnDone.setEnabled(true);
+                                        btnDone.setVisibility(View.VISIBLE);
+
+                                        imgBalloon.setImageDrawable(avdcBalloonHappy);
+                                        avdcBalloonHappy.start();
+                                        avdcBalloonHappy.registerAnimationCallback(new Animatable2Compat.AnimationCallback() {
+                                            @Override
+                                            public void onAnimationEnd(Drawable drawable) {
+                                                avdcBalloonHappy.start();
+                                            }
+                                        });
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+        });
+        */
+    }
+
+    void pressActivityButton(String btn) {
+
+        if (btn.equals(getResources().getString(R.string.Drawing))) {
+            Intent intent = new Intent(MainActivity.this, Paint.class);
+            startActivity(intent);
+        } else if (btn.equals(getResources().getString(R.string.Counting))) {
+            Counting();
+        } else if (btn.equals(getResources().getString(R.string.BalloonBreathing))) {
+            Ballooning();
+        } else if (btn.equals(getResources().getString(R.string.BookReading))) {
+            lytActivity.setVisibility(View.GONE);
+            lytFind.setVisibility(View.VISIBLE);
+            lblFind.setText(R.string.lblFindBook);
+            //imgFind.setImageDrawable();
+            lytDone.setVisibility(View.VISIBLE);
+            btnAgain.setEnabled(false);
+            btnAgain.setVisibility(View.GONE);
+            btnDone.setEnabled(false);
+            btnDone.setVisibility(View.VISIBLE);
+        } else if (btn.equals(getResources().getString(R.string.FidgetToy))) {
+            if (boolSpinnerActive){
+                Intent intent = new Intent(MainActivity.this, Spinner.class);
+                startActivity(intent);
+            }
+            else {
+                lytActivity.setVisibility(View.GONE);
+                lytFind.setVisibility(View.VISIBLE);
+                lblFind.setText(R.string.lblFindToy);
+                //imgFind.setImageDrawable();
+                lytDone.setVisibility(View.VISIBLE);
+                btnAgain.setEnabled(false);
+                btnAgain.setVisibility(View.GONE);
+                btnDone.setEnabled(false);
+                btnDone.setVisibility(View.VISIBLE);
+            }
+        }
+    }
 }
+
+
+
+
 

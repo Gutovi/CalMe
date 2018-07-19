@@ -62,4 +62,13 @@
     <string name="go_back">Volver</string>
     <string name="no">No</string>
     <string name="yes">Sí</string>
+
+    <string name="lblBreathWithMe">¡Respirá conmigo!</string>
+    <string name="Ready">¿Listo?</string>
+    <string name="In">Adentro...</string>
+    <string name="Out">Afuera...</string>
+    <string name="GoodJob">¡Muy bien!</string>
+
+    <string name="lblFindToy">Buscá un juguete</string>
+    <string name="lblFindBook">Buscá un libro</string>
 </resources>
