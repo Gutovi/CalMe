@@ -11,7 +11,7 @@
     <string name="mad">Enfadado</string>
     <string name="scared">Temeroso</string>
     <string name="frustrated">Frustrado</string>
-    <string name="hurt">Dolido</string>
+    <string name="anxious">Nervioso</string>
 
     <string name="CalmDown">Probemos calmarnos…</string>
     <string name="BalloonBreathing">Respirando como globo</string>
@@ -38,23 +38,26 @@
     <string name="nameDeepBlue">Azul</string>
     <string name="nameViolet">Violeta</string>
     <string name="namePink">Rosado</string>
+    <string name="nameBrown">Café</string>
 
     <string name="nameBackgroundColor">Color de Fondo</string>
     <string name="explanationPenBGSwitch">Cambio de Color de Fondo y de Lápiz</string>
     <string name="namePenColor">Color de Lápiz</string>
 
-    <string name="lblCounting">¡Contemos juntos!</string>
-    <string name="one">¡Uno!</string>
-    <string name="two">¡Dos!</string>
-    <string name="three">¡Tres!</string>
-    <string name="four">¡Cuatro!</string>
-    <string name="five">¡Cinco!</string>
-    <string name="six">¡Seis!</string>
-    <string name="seven">¡Siete!</string>
-    <string name="eight">¡Ocho!</string>
-    <string name="nine">¡Nueve!</string>
-    <string name="ten">¡Diez!</string>
+    <string name="lblCounting">Contemos juntos</string>
+    <string name="zero">¿Listo? Vamos</string>
+    <string name="one">Uno</string>
+    <string name="two">Dos</string>
+    <string name="three">Tres</string>
+    <string name="four">Cuatro</string>
+    <string name="five">Cinco</string>
+    <string name="six">Seis</string>
+    <string name="seven">Siete</string>
+    <string name="eight">Ocho</string>
+    <string name="nine">Nueve</string>
+    <string name="ten">Diez</string>
 
+    <string name="done">Listo</string>
     <string name="again">Otra Vez</string>
     <string name="go_back">Volver</string>
     <string name="no">No</string>

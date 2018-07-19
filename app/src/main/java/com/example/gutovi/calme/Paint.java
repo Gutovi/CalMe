@@ -147,6 +147,13 @@ public class Paint extends AppCompatActivity {
                 Pink();
             }
         });
+
+        Button btnBrown = findViewById(R.id.btnBrown);
+        btnBrown.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Brown();
+            }
+        });
     }
 
 
@@ -231,5 +238,9 @@ public class Paint extends AppCompatActivity {
     void Pink(){
         if (isPenColor) this.canvas.setPaintStrokeColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintPink));
         else            this.canvas.setBaseColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintPink));
+    }
+    void Brown(){
+        if (isPenColor) this.canvas.setPaintStrokeColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintBrown));
+        else            this.canvas.setBaseColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintBrown));
     }
 }

@@ -111,6 +111,15 @@
             android:background="@color/PaintPink"
             android:contentDescription="@string/namePink" />
 
+        <Button
+            android:id="@+id/btnBrown"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/PaintBrown"
+            android:contentDescription="@string/nameBrown" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -128,14 +137,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1.09"
+            android:layout_weight="1.21"
             android:orientation="horizontal">
 
             <ToggleButton
                 android:id="@+id/btnBack-Pen"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight=".75"
+                android:layout_weight=".725"
                 android:checked="false"
                 android:contentDescription="@string/explanationPenBGSwitch"
                 android:fontFamily="casual"

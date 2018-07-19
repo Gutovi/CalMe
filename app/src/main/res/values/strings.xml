@@ -11,7 +11,7 @@
     <string name="mad">Mad</string>
     <string name="scared">Scared</string>
     <string name="frustrated">Frustrated</string>
-    <string name="hurt">Hurt</string>
+    <string name="anxious">Anxious</string>
 
     <string name="CalmDown">Let\'s calm down with…</string>
     <string name="BalloonBreathing">Balloon Breathing</string>
@@ -38,23 +38,26 @@
     <string name="nameDeepBlue">Deep Blue</string>
     <string name="nameViolet">Violet</string>
     <string name="namePink">Pink</string>
+    <string name="nameBrown">Brown</string>
 
     <string name="nameBackgroundColor">Background Color</string>
     <string name="explanationPenBGSwitch">Background Color and Pen Color Switch</string>
     <string name="namePenColor">Pen Color</string>
 
-    <string name="lblCounting">Let\'s Count Together!</string>
-    <string name="one">One!</string>
-    <string name="two">Two!</string>
-    <string name="three">Three!</string>
-    <string name="four">Four!</string>
-    <string name="five">Five!</string>
-    <string name="six">Six!</string>
-    <string name="seven">Seven!</string>
-    <string name="eight">Eight!</string>
-    <string name="nine">Nine!</string>
-    <string name="ten">Ten!</string>
+    <string name="lblCounting">Let\'s Count Together</string>
+    <string name="zero">Ready? Go</string>
+    <string name="one">One</string>
+    <string name="two">Two</string>
+    <string name="three">Three</string>
+    <string name="four">Four</string>
+    <string name="five">Five</string>
+    <string name="six">Six</string>
+    <string name="seven">Seven</string>
+    <string name="eight">Eight</string>
+    <string name="nine">Nine</string>
+    <string name="ten">Ten</string>
 
+    <string name="done">Done</string>
     <string name="again">Again</string>
     <string name="go_back">Go Back</string>
     <string name="no">No</string>

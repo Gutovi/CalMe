@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <ImageButton
             android:id="@+id/btnStart"
@@ -22,7 +22,7 @@
             android:background="@android:color/transparent"
             android:contentDescription="@string/startDescription"
             android:scaleType="fitCenter"
-            app:srcCompat="@android:drawable/ic_menu_slideshow" />
+            app:srcCompat="@drawable/play" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,16 +34,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="?attr/colorPrimaryDark"
                 android:elevation="10dp"
-                android:text="@string/settingsButton" />
+                android:text="@string/settingsButton"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/btnTutorial"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="?attr/colorPrimaryDark"
                 android:elevation="10dp"
-                android:text="@string/TutorialButton" />
+                android:text="@string/TutorialButton"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -53,8 +61,9 @@
         android:id="@+id/lytChooseEmotion"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/lblHowFeeling"
@@ -91,17 +100,8 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/sad"
                 android:scaleType="fitCenter"
-                app:srcCompat="@android:drawable/ic_menu_delete" />
+                app:srcCompat="@mipmap/sad" />
 
-            <ImageButton
-                android:id="@+id/btnEmotion3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/mad"
-                android:scaleType="fitCenter"
-                app:srcCompat="@android:drawable/presence_busy" />
         </LinearLayout>
 
         <LinearLayout
@@ -130,15 +130,6 @@
                 android:textAppearance="@style/CalMeText"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/lblEmotion3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/mad"
-                android:textAlignment="center"
-                android:textAppearance="@style/CalMeText"
-                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -149,6 +140,16 @@
             android:orientation="horizontal">
 
             <ImageButton
+                android:id="@+id/btnEmotion3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/mad"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/mad" />
+
+            <ImageButton
                 android:id="@+id/btnEmotion4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -156,27 +157,8 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/scared"
                 android:scaleType="fitCenter"
-                app:srcCompat="?android:attr/alertDialogIcon" />
+                app:srcCompat="@mipmap/scared" />
 
-            <ImageButton
-                android:id="@+id/btnEmotion5"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/frustrated"
-                android:scaleType="fitCenter"
-                app:srcCompat="@android:drawable/ic_lock_silent_mode" />
-
-            <ImageButton
-                android:id="@+id/btnEmotion6"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/hurt"
-                android:scaleType="fitCenter"
-                app:srcCompat="@android:drawable/sym_call_missed" />
         </LinearLayout>
 
         <LinearLayout
@@ -184,6 +166,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/lblEmotion3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mad"
+                android:textAlignment="center"
+                android:textAppearance="@style/CalMeText"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/lblEmotion4"
@@ -194,6 +186,42 @@
                 android:textAlignment="center"
                 android:textAppearance="@style/CalMeText"
                 android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lytEmotionImageRow3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnEmotion5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/frustrated"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/frustrated" />
+
+            <ImageButton
+                android:id="@+id/btnEmotion6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/anxious"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/anxious" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lytEmotionNameRow3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/lblEmotion5"
@@ -210,41 +238,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/hurt"
+                android:text="@string/anxious"
                 android:textAlignment="center"
                 android:textAppearance="@style/CalMeText"
                 android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lytConfirmEmotion"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:orientation="horizontal"
-            android:visibility="gone">
-
-            <ImageButton
-                android:id="@+id/btnChangeEmotion"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/scared"
-                android:scaleType="fitCenter"
-                app:srcCompat="?android:attr/actionModeCloseDrawable" />
-
-            <ImageButton
-                android:id="@+id/btnConfirmEmotion"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/scared"
-                android:scaleType="fitCenter"
-                app:srcCompat="@android:drawable/checkbox_on_background" />
-
         </LinearLayout>
 
     </LinearLayout>
@@ -485,7 +482,8 @@
         <TextView
             android:id="@+id/lblNumberName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/zero"
             android:textAlignment="center"
             android:textAppearance="@style/CalMeTitle"
             android:textStyle="bold" />
@@ -496,10 +494,10 @@
         android:id="@+id/lytDone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_weight="5"
         android:gravity="bottom"
         android:orientation="horizontal"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <Button
             android:id="@+id/btnGoBack"
@@ -521,35 +519,46 @@
             android:text="@string/again"
             android:textAppearance="@style/CalMeText" />
 
+        <Button
+            android:id="@+id/btnDone"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:elevation="10dp"
+            android:text="@string/done"
+            android:textAppearance="@style/CalMeText" />
+
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/lytCorrect"
+        android:id="@+id/lytConfirm"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="bottom|center_vertical"
+        android:layout_weight="4"
         android:gravity="bottom"
         android:orientation="horizontal"
         android:visibility="gone">
 
-        <Button
-            android:id="@+id/btnNo"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:elevation="10dp"
-            android:text="@string/no"
-            android:textAppearance="@style/CalMeText" />
 
-        <Button
-            android:id="@+id/btnYes"
-            style="@style/Widget.AppCompat.Button.Borderless"
+        <ImageButton
+            android:id="@+id/btnNo"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:elevation="10dp"
-            android:text="@android:string/ok"
-            android:textAppearance="@style/CalMeText" />
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/no"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/btnYes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/yes"
+            android:scaleType="fitCenter" />
 
     </LinearLayout>
 

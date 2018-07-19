@@ -22,6 +22,7 @@
     <color name="PaintBlue">#1565c0</color>
     <color name="PaintPurple">#5e35b1</color>
     <color name="PaintPink">#ff4081</color>
+    <color name="PaintBrown">#734123</color>
     <color name="PaintGray">#9e9e9e</color>
 
 </resources>
