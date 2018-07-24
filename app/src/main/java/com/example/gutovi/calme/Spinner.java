@@ -1,16 +1,13 @@
 package com.example.gutovi.calme;
 
 import android.support.v4.view.GestureDetectorCompat;
-import android.support.v4.view.VelocityTrackerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
-import android.view.VelocityTracker;
 import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
-import android.view.animation.Interpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 
@@ -35,11 +32,8 @@ public class Spinner extends AppCompatActivity implements GestureDetector.OnGest
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent event){
-        if (this.mDetector.onTouchEvent(event)) {
-            return true;
-        }
-        return super.onTouchEvent(event);
+    public boolean onTouchEvent(MotionEvent event) {
+        return this.mDetector.onTouchEvent(event) || super.onTouchEvent(event);
     }
 
     @Override

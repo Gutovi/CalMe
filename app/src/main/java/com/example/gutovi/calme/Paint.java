@@ -25,6 +25,7 @@ public class Paint extends AppCompatActivity {
     boolean isPenColor = true;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
