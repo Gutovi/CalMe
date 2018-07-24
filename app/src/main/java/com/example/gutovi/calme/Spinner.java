@@ -9,6 +9,8 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.animation.Animation;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.Interpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 
@@ -51,14 +53,16 @@ public class Spinner extends AppCompatActivity implements GestureDetector.OnGest
         Log.d("Y", "Y velocity: " + velocityY);
 
 
-        float angle = velocityX;
+        float angle = velocityX/4;
         float pivotX = Spinner.getWidth() / 2;
         float pivotY = Spinner.getHeight() / 2;
 
         final Animation animRotate = new RotateAnimation(lastAngle == -1 ? 0 : lastAngle, angle, pivotX, pivotY);
         lastAngle = angle;
-        animRotate.setDuration(Math.abs(Math.round(velocityX)));
+        animRotate.setDuration(Math.abs(Math.round(velocityX*2)));
+        if (animRotate.getDuration()< 2000) animRotate.setDuration(2000);
         animRotate.setFillAfter(true);
+        animRotate.setInterpolator(new DecelerateInterpolator());
 
         Spinner.startAnimation(animRotate);
         return true;
@@ -80,6 +84,7 @@ public class Spinner extends AppCompatActivity implements GestureDetector.OnGest
 
     @Override
     public boolean onSingleTapUp(MotionEvent event) {
+        Spinner.clearAnimation();
         return true;
     }
 

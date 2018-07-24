@@ -65,10 +65,13 @@
 
     <string name="lblBreathWithMe">¡Respirá conmigo!</string>
     <string name="Ready">¿Listo?</string>
-    <string name="In">Adentro...</string>
-    <string name="Out">Afuera...</string>
+    <string name="In">Adentro…</string>
+    <string name="Out">Afuera…</string>
     <string name="GoodJob">¡Muy bien!</string>
 
     <string name="lblFindToy">Buscá un juguete</string>
     <string name="lblFindBook">Buscá un libro</string>
+
+    <string name="swipe">¡Arrastrá tu dedo por la pantalla para hacerlo girar!</string>
+    <string name="spinner">Fidget Spinner</string>
 </resources>

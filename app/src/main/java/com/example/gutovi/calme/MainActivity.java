@@ -7,6 +7,8 @@ import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.CountDownTimer;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.graphics.drawable.Animatable2Compat;
 import android.support.graphics.drawable.AnimatedVectorDrawableCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton btnNo;
     AnimatedVectorDrawableCompat avdcYes;
     AnimatedVectorDrawableCompat avdcNo;
+    final Handler mainHandler = new Handler(Looper.getMainLooper());
 
     TextView Number;
     TextView NumberName;
@@ -148,26 +151,26 @@ public class MainActivity extends AppCompatActivity {
         lblFind = findViewById(R.id.lblFind);
         imgFind = findViewById(R.id.imgFind);
 
-        NumberCounter = new CountDownTimer(15000, 1500) {
+        NumberCounter = new CountDownTimer(25000, 500) {
 
             public void onTick(long millisUntilFinished) {
-                if (millisUntilFinished < 13500) {
+                if (millisUntilFinished < 22500) {
                     Number.setText(Long.toString(9 - millisUntilFinished / 1500));
-                    if (millisUntilFinished > 12000) {
+                    if (millisUntilFinished > 20000) {
                         NumberName.setText(R.string.one);
-                    } else if (millisUntilFinished > 10500) {
+                    } else if (millisUntilFinished > 17500) {
                         NumberName.setText(R.string.two);
-                    } else if (millisUntilFinished > 9000) {
+                    } else if (millisUntilFinished > 15000) {
                         NumberName.setText(R.string.three);
-                    } else if (millisUntilFinished > 7500) {
+                    } else if (millisUntilFinished > 12500) {
                         NumberName.setText(R.string.four);
-                    } else if (millisUntilFinished > 6000) {
+                    } else if (millisUntilFinished > 10000) {
                         NumberName.setText(R.string.five);
-                    } else if (millisUntilFinished > 4500) {
+                    } else if (millisUntilFinished > 7500) {
                         NumberName.setText(R.string.six);
-                    } else if (millisUntilFinished > 3000) {
+                    } else if (millisUntilFinished > 5000) {
                         NumberName.setText(R.string.seven);
-                    } else if (millisUntilFinished > 1500) {
+                    } else if (millisUntilFinished > 2500) {
                         NumberName.setText(R.string.eight);
                     } else if (millisUntilFinished > 0) {
                         NumberName.setText(R.string.nine);
@@ -322,6 +325,8 @@ public class MainActivity extends AppCompatActivity {
                 NumberCounter.cancel();
                 lytBalloon.setVisibility(View.GONE);
                 lblBreathingState.setText(R.string.Ready);
+                lytFind.setVisibility(View.GONE);
+                lblFind.setText("");
                 lytDone.setVisibility(View.GONE);
                 btnAgain.setEnabled(false);
                 btnAgain.setVisibility(View.INVISIBLE);
@@ -342,6 +347,8 @@ public class MainActivity extends AppCompatActivity {
                 lytActivity.setVisibility(View.GONE);
                 lytEmotion.setVisibility(View.GONE);
                 lytCounting.setVisibility(View.GONE);
+                lytFind.setVisibility(View.GONE);
+                lblFind.setText("");
                 lytDone.setVisibility(View.GONE);
                 btnNo.performClick();
             }
@@ -380,20 +387,30 @@ public class MainActivity extends AppCompatActivity {
             lbl.append("?");
             lbl.setTextSize(45);
 
-            avdcYes.start();
             avdcYes.registerAnimationCallback(new Animatable2Compat.AnimationCallback() {
                 @Override
-                public void onAnimationEnd(Drawable drawable) {
-                    avdcYes.start();
+                public void onAnimationEnd(final Drawable drawable) {
+                    mainHandler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            avdcYes.start();
+                        }
+                    });
+                }
+            });
+            avdcYes.start();
+            avdcNo.registerAnimationCallback(new Animatable2Compat.AnimationCallback() {
+                @Override
+                public void onAnimationEnd(final Drawable drawable) {
+                    mainHandler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            avdcNo.start();
+                        }
+                    });
                 }
             });
             avdcNo.start();
-            avdcNo.registerAnimationCallback(new Animatable2Compat.AnimationCallback() {
-                @Override
-                public void onAnimationEnd(Drawable drawable) {
-                    avdcNo.start();
-                }
-            });
         }
     }
 
@@ -511,7 +528,7 @@ public class MainActivity extends AppCompatActivity {
                 lytDone.setVisibility(View.VISIBLE);
                 btnAgain.setEnabled(false);
                 btnAgain.setVisibility(View.GONE);
-                btnDone.setEnabled(false);
+                btnDone.setEnabled(true);
                 btnDone.setVisibility(View.VISIBLE);
             }
         }

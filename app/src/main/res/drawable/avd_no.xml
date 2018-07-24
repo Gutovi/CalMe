@@ -85,22 +85,6 @@
             <set>
                 <objectAnimator
                     android:propertyName="translateX"
-                    android:startOffset="1250"
-                    android:duration="500"
-                    android:valueFrom="200"
-                    android:valueTo="0"
-                    android:valueType="floatType"
-                    android:interpolator="@android:anim/accelerate_decelerate_interpolator"/>
-                <objectAnimator
-                    android:propertyName="scaleX"
-                    android:startOffset="1250"
-                    android:duration="500"
-                    android:valueFrom="0.65"
-                    android:valueTo="0.8"
-                    android:valueType="floatType"
-                    android:interpolator="@android:anim/accelerate_decelerate_interpolator"/>
-                <objectAnimator
-                    android:propertyName="translateX"
                     android:startOffset="500"
                     android:duration="375"
                     android:valueFrom="-200"
@@ -145,6 +129,22 @@
                     android:valueTo="200"
                     android:valueType="floatType"
                     android:interpolator="@android:anim/decelerate_interpolator"/>
+                <objectAnimator
+                    android:propertyName="translateX"
+                    android:startOffset="1250"
+                    android:duration="500"
+                    android:valueFrom="200"
+                    android:valueTo="0"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/accelerate_decelerate_interpolator"/>
+                <objectAnimator
+                    android:propertyName="scaleX"
+                    android:startOffset="1250"
+                    android:duration="500"
+                    android:valueFrom="0.65"
+                    android:valueTo="0.8"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/accelerate_decelerate_interpolator"/>
             </set>
         </aapt:attr>
     </target>
