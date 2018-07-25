@@ -72,6 +72,8 @@
     <string name="lblFindToy">Go Find A Toy!</string>
     <string name="lblFindBook">Go Find A Book!</string>
 
+    <string name="lblFollowPose">Do as I do!</string>
+
     <string name="swipe">Swipe the screen to make it spin!</string>
     <string name="spinner">Fidget Spinner</string>
 </resources>

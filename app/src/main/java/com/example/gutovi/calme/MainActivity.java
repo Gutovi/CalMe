@@ -1,6 +1,7 @@
 package com.example.gutovi.calme;
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.CountDownTimer;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout lytCounting;
     LinearLayout lytBalloon;
     LinearLayout lytFind;
+    LinearLayout lytYoga;
     Button btnGoBack;
     Button btnDone;
     Button btnAgain;
@@ -112,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         lytCounting = findViewById(R.id.lytCount);
         lytBalloon = findViewById(R.id.lytBalloon);
         lytFind = findViewById(R.id.lytFindA);
+        lytYoga = findViewById(R.id.lytYoga);
         btnGoBack = findViewById(R.id.btnGoBack);
         btnDone = findViewById(R.id.btnDone);
         btnAgain = findViewById(R.id.btnAgain);
@@ -146,26 +149,27 @@ public class MainActivity extends AppCompatActivity {
         lblFind = findViewById(R.id.lblFind);
         imgFind = findViewById(R.id.imgFind);
 
-        NumberCounter = new CountDownTimer(25000, 500) {
+        NumberCounter = new CountDownTimer(30000, 500) {
 
+            @SuppressLint("SetTextI18n")
             public void onTick(long millisUntilFinished) {
-                if (millisUntilFinished < 22500) {
-                    Number.setText(Long.toString(9 - millisUntilFinished / 1500));
-                    if (millisUntilFinished > 20000) {
+                if (millisUntilFinished < 27000) {
+                    Number.setText(Long.toString(9 - millisUntilFinished / 3000));
+                    if (millisUntilFinished > 24000) {
                         NumberName.setText(R.string.one);
-                    } else if (millisUntilFinished > 17500) {
+                    } else if (millisUntilFinished > 21000) {
                         NumberName.setText(R.string.two);
-                    } else if (millisUntilFinished > 15000) {
+                    } else if (millisUntilFinished > 18000) {
                         NumberName.setText(R.string.three);
-                    } else if (millisUntilFinished > 12500) {
+                    } else if (millisUntilFinished > 15000) {
                         NumberName.setText(R.string.four);
-                    } else if (millisUntilFinished > 10000) {
+                    } else if (millisUntilFinished > 12000) {
                         NumberName.setText(R.string.five);
-                    } else if (millisUntilFinished > 7500) {
+                    } else if (millisUntilFinished > 9000) {
                         NumberName.setText(R.string.six);
-                    } else if (millisUntilFinished > 5000) {
+                    } else if (millisUntilFinished > 6000) {
                         NumberName.setText(R.string.seven);
-                    } else if (millisUntilFinished > 2500) {
+                    } else if (millisUntilFinished > 3000) {
                         NumberName.setText(R.string.eight);
                     } else if (millisUntilFinished > 0) {
                         NumberName.setText(R.string.nine);
@@ -173,6 +177,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
+            @SuppressLint("SetTextI18n")
             public void onFinish() {
                 Number.setText("10");
                 NumberName.setText(R.string.ten);
@@ -322,6 +327,7 @@ public class MainActivity extends AppCompatActivity {
                 lblBreathingState.setText(R.string.Ready);
                 lytFind.setVisibility(View.GONE);
                 lblFind.setText("");
+                lytYoga.setVisibility(View.GONE);
                 lytDone.setVisibility(View.GONE);
                 btnAgain.setEnabled(false);
                 btnAgain.setVisibility(View.INVISIBLE);
@@ -344,6 +350,7 @@ public class MainActivity extends AppCompatActivity {
                 lytCounting.setVisibility(View.GONE);
                 lytFind.setVisibility(View.GONE);
                 lblFind.setText("");
+                lytYoga.setVisibility(View.GONE);
                 lytDone.setVisibility(View.GONE);
                 btnNo.performClick();
             }
@@ -504,11 +511,12 @@ public class MainActivity extends AppCompatActivity {
             lytActivity.setVisibility(View.GONE);
             lytFind.setVisibility(View.VISIBLE);
             lblFind.setText(R.string.lblFindBook);
-            //imgFind.setImageDrawable();
+            imgFind.setImageResource(R.mipmap.reading);
+            imgFind.setContentDescription(getString(R.string.lblFindBook));
             lytDone.setVisibility(View.VISIBLE);
             btnAgain.setEnabled(false);
             btnAgain.setVisibility(View.GONE);
-            btnDone.setEnabled(false);
+            btnDone.setEnabled(true);
             btnDone.setVisibility(View.VISIBLE);
         } else if (btn.equals(getResources().getString(R.string.FidgetToy))) {
             if (boolSpinnerActive){
@@ -519,13 +527,22 @@ public class MainActivity extends AppCompatActivity {
                 lytActivity.setVisibility(View.GONE);
                 lytFind.setVisibility(View.VISIBLE);
                 lblFind.setText(R.string.lblFindToy);
-                //imgFind.setImageDrawable();
+                imgFind.setImageResource(R.mipmap.fidget_toys);
+                imgFind.setContentDescription(getString(R.string.lblFindToy));
                 lytDone.setVisibility(View.VISIBLE);
                 btnAgain.setEnabled(false);
                 btnAgain.setVisibility(View.GONE);
                 btnDone.setEnabled(true);
                 btnDone.setVisibility(View.VISIBLE);
             }
+        }else if (btn.equals(getResources().getString(R.string.Yoga))) {
+            lytActivity.setVisibility(View.GONE);
+            lytYoga.setVisibility(View.VISIBLE);
+            lytDone.setVisibility(View.VISIBLE);
+            btnAgain.setEnabled(false);
+            btnAgain.setVisibility(View.GONE);
+            btnDone.setEnabled(true);
+            btnDone.setVisibility(View.VISIBLE);
         }
     }
 }

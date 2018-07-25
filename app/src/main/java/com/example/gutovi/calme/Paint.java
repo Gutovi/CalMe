@@ -2,20 +2,19 @@ package com.example.gutovi.calme;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import android.util.Log;
 
 import com.android.graphics.CanvasView;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.Random;
 
 public class Paint extends AppCompatActivity {
@@ -31,7 +30,7 @@ public class Paint extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paint);
 
-        this.canvas = (CanvasView) this.findViewById(R.id.canvas);
+        this.canvas = this.findViewById(R.id.canvas);
 
         //this.canvas.setDrawer(CanvasView.Drawer.PEN);
         this.canvas.setPaintStrokeWidth(15F);
@@ -180,8 +179,8 @@ public class Paint extends AppCompatActivity {
         Random gen = new Random();
         int n = 10000;
         n = gen.nextInt(n);
-        String fotoname = "Photo-" + n + ".jpg";
-        File file = new File(newDir, fotoname);
+        String photoName = "Photo-" + n + ".jpg";
+        File file = new File(newDir, photoName);
         if (file.exists()) file.delete();
         try {
             FileOutputStream out = new FileOutputStream(file);
@@ -190,7 +189,7 @@ public class Paint extends AppCompatActivity {
             out.close();
             Toast.makeText(getApplicationContext(), "Saved to your folder", Toast.LENGTH_SHORT).show();
 
-        } catch (Exception e) {
+        } catch (Exception ignored) {
 
         }
     }

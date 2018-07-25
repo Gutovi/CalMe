@@ -14,6 +14,16 @@
         android:orientation="vertical"
         android:visibility="visible">
 
+        <TextView
+            android:id="@+id/lblTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textAppearance="@style/CalMeTitle"
+            android:textSize="72sp"
+            android:textStyle="bold" />
+
         <ImageButton
             android:id="@+id/btnStart"
             android:layout_width="match_parent"
@@ -39,7 +49,8 @@
                 android:text="@string/settingsButton"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/btnTutorial"
@@ -51,7 +62,8 @@
                 android:text="@string/TutorialButton"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
 
         </LinearLayout>
 
@@ -80,7 +92,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:ignore="NestedWeights">
 
             <ImageButton
                 android:id="@+id/btnEmotion1"
@@ -276,9 +289,9 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/BalloonBreathing"
-                android:rotation="180"
                 android:scaleType="fitCenter"
-                app:srcCompat="?android:attr/textSelectHandle" />
+                app:srcCompat="@mipmap/balloon_breathing"
+                tools:ignore="NestedWeights" />
 
             <ImageButton
                 android:id="@+id/btnActivity2"
@@ -288,7 +301,7 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/FidgetToy"
                 android:scaleType="fitCenter"
-                app:srcCompat="@android:drawable/ic_menu_compass" />
+                app:srcCompat="@mipmap/fidget_toys" />
 
             <ImageButton
                 android:id="@+id/btnActivity3"
@@ -298,7 +311,7 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/Counting"
                 android:scaleType="fitCenter"
-                app:srcCompat="@android:drawable/sym_action_chat" />
+                app:srcCompat="@mipmap/count" />
         </LinearLayout>
 
         <LinearLayout
@@ -313,6 +326,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:text="@string/BalloonBreathing"
                 android:textAlignment="center"
                 android:textAppearance="@style/CalMeText"
@@ -335,6 +350,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:text="@string/Counting"
                 android:textAlignment="center"
                 android:textAppearance="@style/CalMeText"
@@ -356,7 +373,8 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/BookReading"
                 android:scaleType="fitCenter"
-                app:srcCompat="?android:attr/actionModeFindDrawable" />
+                app:srcCompat="@mipmap/reading"
+                tools:ignore="NestedWeights" />
 
             <ImageButton
                 android:id="@+id/btnActivity5"
@@ -366,7 +384,7 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/Drawing"
                 android:scaleType="fitCenter"
-                app:srcCompat="@android:drawable/ic_menu_edit" />
+                app:srcCompat="@mipmap/drawing" />
 
             <ImageButton
                 android:id="@+id/btnActivity6"
@@ -376,13 +394,14 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/Yoga"
                 android:scaleType="fitCenter"
-                app:srcCompat="@android:drawable/ic_menu_myplaces" />
+                app:srcCompat="@mipmap/yoga" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/lytActivityNameRow2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -391,6 +410,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:text="@string/BookReading"
                 android:textAlignment="center"
                 android:textAppearance="@style/CalMeText"
@@ -402,6 +423,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:text="@string/Drawing"
                 android:textAlignment="center"
                 android:textAppearance="@style/CalMeText"
@@ -413,40 +436,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:text="@string/Yoga"
                 android:textAlignment="center"
                 android:textAppearance="@style/CalMeText"
                 android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lytConfirmActivity"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:orientation="horizontal"
-            android:visibility="gone">
-
-            <ImageButton
-                android:id="@+id/btnChangeActivity"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/scared"
-                android:scaleType="fitCenter"
-                app:srcCompat="?android:attr/actionModeCloseDrawable" />
-
-            <ImageButton
-                android:id="@+id/btnConfirmActivity"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/scared"
-                android:scaleType="fitCenter"
-                app:srcCompat="@android:drawable/checkbox_on_background" />
 
         </LinearLayout>
 
@@ -477,7 +472,8 @@
             android:textAlignment="center"
             android:textAppearance="@style/CalMeTitle"
             android:textSize="250sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/lblNumberName"
@@ -513,7 +509,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:contentDescription="@string/lblBreathWithMe"
-            app:srcCompat="?android:attr/textSelectHandle" />
+            app:srcCompat="@mipmap/balloon_breathing"
+            tools:ignore="NestedWeights" />
 
         <TextView
             android:id="@+id/lblBreathingState"
@@ -528,12 +525,41 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/lytFindA"
+        android:id="@+id/lytYoga"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical"
         android:visibility="gone">
+
+        <TextView
+            android:id="@+id/lblFollow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lblFollowPose"
+            android:textAlignment="center"
+            android:textAppearance="@style/CalMeTitle"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgYoga"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/lblFollowPose"
+            app:srcCompat="@mipmap/yoga_steps"
+            tools:ignore="NestedWeights" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lytFindA"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:ignore="UseCompoundDrawables">
 
         <TextView
             android:id="@+id/lblFind"
@@ -547,8 +573,7 @@
             android:id="@+id/imgFind"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="@string/lblFindToy"
-            app:srcCompat="@android:drawable/ic_menu_compass" />
+            tools:ignore="ContentDescription" />
 
     </LinearLayout>
 
@@ -569,7 +594,8 @@
             android:layout_weight="1"
             android:elevation="10dp"
             android:text="@string/go_back"
-            android:textAppearance="@style/CalMeText" />
+            android:textAppearance="@style/CalMeText"
+            tools:ignore="NestedWeights" />
 
         <Button
             android:id="@+id/btnAgain"
@@ -611,7 +637,8 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:contentDescription="@string/no"
-            android:scaleType="fitCenter" />
+            android:scaleType="fitCenter"
+            tools:ignore="NestedWeights" />
 
         <ImageButton
             android:id="@+id/btnYes"

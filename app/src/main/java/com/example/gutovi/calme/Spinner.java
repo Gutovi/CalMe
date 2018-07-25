@@ -9,6 +9,7 @@ import android.view.MotionEvent;
 import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.RotateAnimation;
+import android.view.animation.Transformation;
 import android.widget.ImageView;
 
 public class Spinner extends AppCompatActivity implements GestureDetector.OnGestureListener {
@@ -18,6 +19,7 @@ public class Spinner extends AppCompatActivity implements GestureDetector.OnGest
 
     ImageView Spinner;
     float lastAngle = -1;
+    float changeAngle;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,15 +46,39 @@ public class Spinner extends AppCompatActivity implements GestureDetector.OnGest
     @Override
     public boolean onFling(MotionEvent event1, MotionEvent event2,float velocityX, float velocityY) {
         Log.d("X", "X velocity: " + velocityX);
-        Log.d("Y", "Y velocity: " + velocityY);
 
 
-        float angle = velocityX/4;
-        float pivotX = Spinner.getWidth() / 2;
-        float pivotY = Spinner.getHeight() / 2;
+        final float angle = changeAngle+velocityX/2;
+        final float pivotX = Spinner.getWidth() / 2;
+        final float pivotY = Spinner.getHeight() / 2;
+        Animation animRotate;
 
-        final Animation animRotate = new RotateAnimation(lastAngle == -1 ? 0 : lastAngle, angle, pivotX, pivotY);
-        lastAngle = angle;
+        if (Spinner.getAnimation() == null) {
+            animRotate = new RotateAnimation(lastAngle, angle, pivotX, pivotY) {
+                @Override
+                protected void applyTransformation(float interpolatedTime, Transformation t) {
+                    super.applyTransformation(interpolatedTime, t);
+                    lastAngle += ((angle - lastAngle) * interpolatedTime);
+                }
+            };
+            animRotate = new RotateAnimation(changeAngle, angle, pivotX, pivotY) {
+                @Override
+                protected void applyTransformation(float interpolatedTime, Transformation t) {
+                    super.applyTransformation(interpolatedTime, t);
+                    changeAngle = lastAngle + ((angle - lastAngle) * interpolatedTime);
+                }
+            };
+        }
+        else {
+            animRotate = new RotateAnimation(changeAngle, angle, pivotX, pivotY) {
+                @Override
+                protected void applyTransformation(float interpolatedTime, Transformation t) {
+                    super.applyTransformation(interpolatedTime, t);
+                    changeAngle = lastAngle + ((angle - lastAngle) * interpolatedTime);
+                }
+            };
+        }
+        //lastAngle = angle;
         animRotate.setDuration(Math.abs(Math.round(velocityX*2)));
         if (animRotate.getDuration()< 2000) animRotate.setDuration(2000);
         animRotate.setFillAfter(true);
@@ -78,7 +104,10 @@ public class Spinner extends AppCompatActivity implements GestureDetector.OnGest
 
     @Override
     public boolean onSingleTapUp(MotionEvent event) {
+        Log.d("angle", Float.toString(lastAngle));
+        Log.d("angle", Float.toString(changeAngle));
         Spinner.clearAnimation();
+        changeAngle=0;
         return true;
     }
 
