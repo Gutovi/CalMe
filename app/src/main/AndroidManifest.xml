@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Paint" />
-        <activity android:name=".Spinner"></activity>
+        <activity android:name=".Spinner" />
     </application>
 
 </manifest>

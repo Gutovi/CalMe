@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CálmaMe</string>
+    <string name="app_name">CálmaMi</string>
     <string name="settingsButton">Configuración</string>
     <string name="startDescription">Comenzar</string>
     <string name="TutorialButton">Tutorial</string>
