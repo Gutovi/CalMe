@@ -37,7 +37,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <Button
                 android:id="@+id/btnSettings"
@@ -503,14 +504,25 @@
             android:textAppearance="@style/CalMeTitle"
             android:textStyle="bold" />
 
+        <!--<com.airbnb.lottie.LottieAnimationView-->
+        <!--android:id="@+id/lottieBalloon"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1"-->
+        <!--android:contentDescription="@string/lblBreathWithMe"-->
+        <!--app:lottie_fileName="data.json"-->
+        <!--tools:ignore="NestedWeights" />-->
+
+
         <ImageView
             android:id="@+id/imgBalloon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:contentDescription="@string/lblBreathWithMe"
-            app:srcCompat="@mipmap/balloon_breathing"
+            app:srcCompat="@drawable/balloon_steps"
             tools:ignore="NestedWeights" />
+
 
         <TextView
             android:id="@+id/lblBreathingState"

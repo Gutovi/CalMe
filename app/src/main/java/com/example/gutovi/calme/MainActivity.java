@@ -1,6 +1,7 @@
 package com.example.gutovi.calme;
 
 
+import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -18,6 +19,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.airbnb.lottie.LottieAnimationView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -82,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
     TextView lblFind;
     ImageView imgFind;
 
+    LottieAnimationView lavBalloon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +100,12 @@ public class MainActivity extends AppCompatActivity {
         btnNo = findViewById(R.id.btnNo);
         btnYes.setImageDrawable(avdcYes);
         btnNo.setImageDrawable(avdcNo);
+
+        /*lavBalloon = findViewById(R.id.lottieBalloon);
+        lavBalloon.enableMergePathsForKitKatAndAbove(true);
+        lavBalloon.setRepeatMode(ValueAnimator.INFINITE);
+        lavBalloon.playAnimation();*/
+
 
         /*
         avdcBalloonIn = AnimatedVectorDrawableCompat.create(this, R.drawable.avd_balloonin);
@@ -438,9 +448,9 @@ public class MainActivity extends AppCompatActivity {
         lblBreathingState.setText(R.string.Ready);
         lytDone.setVisibility(View.VISIBLE);
         btnAgain.setEnabled(false);
-        btnAgain.setVisibility(View.INVISIBLE);
-        btnDone.setEnabled(false);
-        btnDone.setVisibility(View.INVISIBLE);
+        btnAgain.setVisibility(View.GONE);
+        btnDone.setEnabled(true);
+        btnDone.setVisibility(View.VISIBLE);
 
         /*
         imgBalloon.setImageDrawable(avdcBalloonHappy);
