@@ -45,7 +45,11 @@ public class Spinner extends AppCompatActivity implements GestureDetector.OnGest
 
     @Override
     public boolean onFling(MotionEvent event1, MotionEvent event2,float velocityX, float velocityY) {
+        int[] Pos = new int[2];
+        Spinner.getLocationOnScreen(Pos);
         Log.d("X", "X velocity: " + velocityX);
+        Log.d("PosX", ": " + Pos[0]);
+        Log.d("PosY", ": " + Pos[1]);
 
 
         final float angle = changeAngle+velocityX/2;

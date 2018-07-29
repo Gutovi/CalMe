@@ -1,13 +1,20 @@
 package com.example.gutovi.calme;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.util.Log;
 
@@ -23,6 +30,10 @@ public class Paint extends AppCompatActivity {
 
     boolean isPenColor = true;
 
+    Button btnBackPen;
+    ImageView imgBackPen;
+
+    int BGColor;
 
 
     @Override
@@ -30,11 +41,16 @@ public class Paint extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paint);
 
-        this.canvas = this.findViewById(R.id.canvas);
+        canvas = this.findViewById(R.id.canvas);
 
         //this.canvas.setDrawer(CanvasView.Drawer.PEN);
-        this.canvas.setPaintStrokeWidth(15F);
-        this.canvas.setOpacity(255);
+        canvas.setPaintStrokeWidth(15F);
+        canvas.setOpacity(255);
+        canvas.setLineCap(android.graphics.Paint.Cap.ROUND);
+
+        imgBackPen = findViewById(R.id.imgBack_Pen);
+
+        BGColor = getResources().getColor(R.color.colorPrimaryDark);
 
         Button btnUndo = findViewById(R.id.btnUndo);
         btnUndo.setOnClickListener(new View.OnClickListener() {
@@ -57,10 +73,15 @@ public class Paint extends AppCompatActivity {
             }
         });
 
-        Button btnBackPen = findViewById(R.id.btnBack_Pen);
+        btnBackPen = findViewById(R.id.btnBack_Pen);
         btnBackPen.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                isPenColor = !isPenColor;
+                BackPenSwitch();
+            }
+        });
+        imgBackPen.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                BackPenSwitch();
             }
         });
 
@@ -71,94 +92,113 @@ public class Paint extends AppCompatActivity {
             }
         });
 
-        Button btnBlack = findViewById(R.id.btnBlack);
+        final Button btnBlack = findViewById(R.id.btnBlack);
         btnBlack.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Black();
+                colorChange(btnBlack);
             }
         });
 
-        Button btnGray = findViewById(R.id.btnGray);
+        final Button btnGray = findViewById(R.id.btnGray);
         btnGray.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Gray();
+                colorChange(btnGray);
             }
         });
 
-        Button btnWhite = findViewById(R.id.btnWhite);
+        final Button btnWhite = findViewById(R.id.btnWhite);
         btnWhite.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                White();
+                colorChange(btnWhite);
             }
         });
 
-        Button btnRed = findViewById(R.id.btnRed);
+        final Button btnRed = findViewById(R.id.btnRed);
         btnRed.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Red();
+                colorChange(btnRed);
             }
         });
 
-        Button btnOrange = findViewById(R.id.btnOrange);
+        final Button btnOrange = findViewById(R.id.btnOrange);
         btnOrange.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Orange();
+                colorChange(btnOrange);
             }
         });
 
-        Button btnYellow = findViewById(R.id.btnYellow);
+        final Button btnYellow = findViewById(R.id.btnYellow);
         btnYellow.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Yellow();
+                colorChange(btnYellow);
             }
         });
 
-        Button btnGreen = findViewById(R.id.btnGreen);
+        final Button btnGreen = findViewById(R.id.btnGreen);
         btnGreen.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Green();
+                colorChange(btnGreen);
             }
         });
 
-        Button btnCyan = findViewById(R.id.btnBlue);
+        final Button btnCyan = findViewById(R.id.btnBlue);
         btnCyan.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Cyan();
+                colorChange(btnCyan);
             }
         });
 
-        Button btnBlue = findViewById(R.id.btnIndigo);
+        final Button btnBlue = findViewById(R.id.btnIndigo);
         btnBlue.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Blue();
+                colorChange(btnBlue);
             }
         });
 
-        Button btnViolet = findViewById(R.id.btnViolet);
+        final Button btnViolet = findViewById(R.id.btnViolet);
         btnViolet.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Purple();
+                colorChange(btnViolet);
             }
         });
 
-        Button btnPink = findViewById(R.id.btnPink);
+        final Button btnPink = findViewById(R.id.btnPink);
         btnPink.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Pink();
+                colorChange(btnPink);
             }
         });
 
-        Button btnBrown = findViewById(R.id.btnBrown);
+        final Button btnBrown = findViewById(R.id.btnBrown);
         btnBrown.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Brown();
+                colorChange(btnBrown);
             }
         });
     }
 
 
+    void BackPenSwitch(){
+        isPenColor = !isPenColor;
+        if (isPenColor){
+            imgBackPen.setImageResource(android.R.drawable.ic_menu_edit);
+            imgBackPen.setImageTintList(ColorStateList.valueOf(canvas.getPaintStrokeColor()));
+            imgBackPen.setContentDescription(getString(R.string.namePenColor));
+            canvas.setOpacity(255);
+            canvas.setPaintStrokeWidth(15F);
+            btnBackPen.setTextColor(BGColor);
+            btnBackPen.setBackgroundColor(Color.WHITE);
+        } else{
+            imgBackPen.setImageResource(android.R.drawable.ic_menu_set_as);
+            imgBackPen.setImageTintList(ColorStateList.valueOf(canvas.getBaseColor()));
+            imgBackPen.setContentDescription(getString(R.string.nameBackgroundColor));
+            canvas.setOpacity(0);
+            canvas.setPaintStrokeWidth(0F);
+            btnBackPen.setTextColor(Color.WHITE);
+            btnBackPen.setBackgroundColor(BGColor);
 
-
+        }
+    }
 
     void Undo(){
         if(this.canvas.canUndo()) this.canvas.undo();
@@ -171,76 +211,72 @@ public class Paint extends AppCompatActivity {
         //this.canvas.clearTovi(this.canvas.getBaseColor(),this.canvas.getWidth(),this.canvas.getHeight());
     }
     void Save() {
-        Bitmap bitmap = this.canvas.getBitmap();
+        if(isExternalStorageWritable()) {
+            Bitmap bitmap = this.canvas.getBitmap();
 
-        String root = Environment.getExternalStorageDirectory().toString();
-        File newDir = new File(root + "/your folder name");
-        newDir.mkdirs();
-        Random gen = new Random();
-        int n = 10000;
-        n = gen.nextInt(n);
-        String photoName = "Photo-" + n + ".jpg";
-        File file = new File(newDir, photoName);
-        if (file.exists()) file.delete();
-        try {
-            FileOutputStream out = new FileOutputStream(file);
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 90, out);
-            out.flush();
-            out.close();
-            Toast.makeText(getApplicationContext(), "Saved to your folder", Toast.LENGTH_SHORT).show();
+            File Dir = getPublicAlbumStorageDir(getString(R.string.app_name));
+            Dir.mkdirs();
+            int n = 1;
+            String photoName = getString(R.string.wordDrawing) + " " + n + ".png";
+            File file = new File(Dir, photoName);
+            if (file.exists()) {
+                while (file.exists()) {
+                    n++;
+                    photoName = getString(R.string.wordDrawing) + " " + n + ".png";
+                    file = new File(Dir, photoName);
+                }
+            }
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    == PackageManager.PERMISSION_GRANTED) {
+                try {
+                    FileOutputStream out = new FileOutputStream(file);
+                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+                    out.flush();
+                    out.close();
+                    Toast.makeText(getApplicationContext(), getString(R.string.saved), Toast.LENGTH_SHORT).show();
 
-        } catch (Exception ignored) {
-
+                } catch (Exception ignored) {
+                }
+            }
+            else {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+                Toast.makeText(getApplicationContext(), getString(R.string.trySaveAgain), Toast.LENGTH_LONG).show();
+            }
         }
+        else Toast.makeText(getApplicationContext(), getString(R.string.notSaved), Toast.LENGTH_LONG).show();
+
     }
 
 
-    void Black(){
-        if (isPenColor) this.canvas.setPaintStrokeColor(Color.BLACK);
-        else            this.canvas.setBaseColor(Color.BLACK);
+    void colorChange(Button btnTouched){
+        ColorDrawable TempColor = (ColorDrawable) btnTouched.getBackground();
+        if (isPenColor) {
+            this.canvas.setPaintStrokeColor(TempColor.getColor());
+            imgBackPen.setImageTintList(ColorStateList.valueOf(canvas.getPaintStrokeColor()));
+        } else {
+            this.canvas.setBaseColor(TempColor.getColor());
+            imgBackPen.setImageTintList(ColorStateList.valueOf(canvas.getBaseColor()));
+        }
+
     }
-    void Gray(){
-        if (isPenColor) this.canvas.setPaintStrokeColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintGray));
-        else            this.canvas.setBaseColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintGray));
+
+
+
+    public File getPublicAlbumStorageDir(String albumName) {
+        // Get the directory for the user's public pictures directory.
+        File file = new File(Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_PICTURES), albumName);
+        if (!file.mkdirs()) {
+            Log.e("", "Directory not created");
+        }
+        return file;
     }
-    void White(){
-        if (isPenColor) this.canvas.setPaintStrokeColor(Color.WHITE);
-        else            this.canvas.setBaseColor(Color.WHITE);
-    }
-    void Red(){
-        if (isPenColor) this.canvas.setPaintStrokeColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintRed));
-        else            this.canvas.setBaseColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintRed));
-    }
-    void Orange(){
-        if (isPenColor) this.canvas.setPaintStrokeColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintOrange));
-        else            this.canvas.setBaseColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintOrange));
-    }
-    void Yellow(){
-        if (isPenColor) this.canvas.setPaintStrokeColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintYellow));
-        else            this.canvas.setBaseColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintYellow));
-    }
-    void Green(){
-        if (isPenColor) this.canvas.setPaintStrokeColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintGreen));
-        else            this.canvas.setBaseColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintGreen));
-    }
-    void Cyan(){
-        if (isPenColor) this.canvas.setPaintStrokeColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintCyan));
-        else            this.canvas.setBaseColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintCyan));
-    }
-    void Blue(){
-        if (isPenColor) this.canvas.setPaintStrokeColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintBlue));
-        else            this.canvas.setBaseColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintBlue));
-    }
-    void Purple(){
-        if (isPenColor) this.canvas.setPaintStrokeColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintPurple));
-        else            this.canvas.setBaseColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintPurple));
-    }
-    void Pink(){
-        if (isPenColor) this.canvas.setPaintStrokeColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintPink));
-        else            this.canvas.setBaseColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintPink));
-    }
-    void Brown(){
-        if (isPenColor) this.canvas.setPaintStrokeColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintBrown));
-        else            this.canvas.setBaseColor(ContextCompat.getColor(getApplicationContext(), R.color.PaintBrown));
+
+    public boolean isExternalStorageWritable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            return true;
+        }
+        return false;
     }
 }

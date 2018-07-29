@@ -22,8 +22,11 @@
     <string name="Drawing">Dibujando</string>
     <string name="Yoga">Haciendo yoga</string>
 
-    <string name="nameEraser">Borrador</string>
+
     <string name="nameSave">Guardar</string>
+    <string name="saved">¡Se guardó en tu celu!</string>
+    <string name="notSaved">Perdoná, pero por alguna razón no se pudo guardar el dibujo.</string>
+    <string name="trySaveAgain">Si recién nos das permiso, probá guardando de nuevo.</string>
     <string name="nameUndo">Deshacer</string>
     <string name="nameRedo">Rehacer</string>
     <string name="nameClear">Limpiar Pantalla</string>
@@ -76,4 +79,6 @@
 
     <string name="swipe">¡Arrastrá tu dedo por la pantalla para hacerlo girar!</string>
     <string name="spinner">Fidget Spinner</string>
+
+    <string name="wordDrawing">Dibujo</string>
 </resources>

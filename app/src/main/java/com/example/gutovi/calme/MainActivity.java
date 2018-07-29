@@ -358,6 +358,7 @@ public class MainActivity extends AppCompatActivity {
                 lytActivity.setVisibility(View.GONE);
                 lytEmotion.setVisibility(View.GONE);
                 lytCounting.setVisibility(View.GONE);
+                lytBalloon.setVisibility(View.GONE);
                 lytFind.setVisibility(View.GONE);
                 lblFind.setText("");
                 lytYoga.setVisibility(View.GONE);

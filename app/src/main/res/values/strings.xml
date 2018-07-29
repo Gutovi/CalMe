@@ -22,8 +22,10 @@
     <string name="Drawing">Drawing</string>
     <string name="Yoga">Yoga</string>
 
-    <string name="nameEraser">Eraser</string>
     <string name="nameSave">Save</string>
+    <string name="saved">Saved to your phone!</string>
+    <string name="notSaved">Drawing could not be saved for some unknown reason, sorry!</string>
+    <string name="trySaveAgain">If you just gave us permission, you may need to click again to save.</string>
     <string name="nameUndo">Undo</string>
     <string name="nameRedo">Redo</string>
     <string name="nameClear">Clear All</string>
@@ -41,8 +43,8 @@
     <string name="nameBrown">Brown</string>
 
     <string name="nameBackgroundColor">Background Color</string>
-    <string name="explanationPenBGSwitch">Background Color and Pen Color Switch</string>
-    <string name="namePenColor">Pen Color</string>
+    <string name="explanationPenBGSwitch">Background Color and Pencil Color Switch</string>
+    <string name="namePenColor">Pencil Color</string>
 
     <string name="lblCounting">Let\'s Count Together</string>
     <string name="zero">Ready? Go</string>
@@ -76,4 +78,6 @@
 
     <string name="swipe">Swipe the screen to make it spin!</string>
     <string name="spinner">Fidget Spinner</string>
+
+    <string name="wordDrawing">Drawing</string>
 </resources>
