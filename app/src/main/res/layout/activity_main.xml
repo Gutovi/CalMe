@@ -291,7 +291,7 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/BalloonBreathing"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/balloon_breathing"
+                app:srcCompat="@mipmap/balloon_breathing"
                 tools:ignore="NestedWeights" />
 
             <ImageButton
@@ -312,7 +312,7 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/Counting"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/count" />
+                app:srcCompat="@mipmap/count" />
         </LinearLayout>
 
         <LinearLayout
@@ -385,7 +385,7 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/Drawing"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/drawing" />
+                app:srcCompat="@mipmap/drawing" />
 
             <ImageButton
                 android:id="@+id/btnActivity6"
@@ -395,7 +395,7 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/Yoga"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/yoga" />
+                app:srcCompat="@mipmap/yoga" />
         </LinearLayout>
 
         <LinearLayout

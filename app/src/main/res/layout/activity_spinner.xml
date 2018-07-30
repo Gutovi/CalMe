@@ -15,7 +15,7 @@
         android:layout_marginTop="25dp"
         android:layout_weight="2.5"
         android:contentDescription="@string/swipe"
-        app:srcCompat="@drawable/swipe" />
+        app:srcCompat="@mipmap/swipe" />
 
     <ImageView
         android:id="@+id/imgSpinner"

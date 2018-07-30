@@ -24,7 +24,7 @@
 
 
     <string name="nameSave">Guardar</string>
-    <string name="saved">¡Se ha guardado en su móvil!</string>
+    <string name="saved">¡Se ha guardado en su móvil! Busca en tu carpeta de imágenes.</string>
     <string name="notSaved">No se pudo guardar la imagen por alguna razón, lo sentimos.</string>
     <string name="trySaveAgain">Si acabas de darnos permiso, tal vez debas intentar guardar de nuevo.</string>
     <string name="nameUndo">Deshacer</string>

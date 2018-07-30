@@ -24,7 +24,7 @@
 
 
     <string name="nameSave">Guardar</string>
-    <string name="saved">¡Se guardó en tu celu!</string>
+    <string name="saved">¡Se guardó en tu celu! Buscá en tu carpeta de imágenes.</string>
     <string name="notSaved">Perdoná, pero por alguna razón no se pudo guardar el dibujo.</string>
     <string name="trySaveAgain">Si recién nos das permiso, probá guardando de nuevo.</string>
     <string name="nameUndo">Deshacer</string>

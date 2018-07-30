@@ -23,7 +23,7 @@
     <string name="Yoga">Yoga</string>
 
     <string name="nameSave">Save</string>
-    <string name="saved">Saved to your phone!</string>
+    <string name="saved">Saved to your phone! Check your "Pictures" folder.</string>
     <string name="notSaved">Drawing could not be saved for some unknown reason, sorry!</string>
     <string name="trySaveAgain">If you just gave us permission, you may need to click again to save.</string>
     <string name="nameUndo">Undo</string>
