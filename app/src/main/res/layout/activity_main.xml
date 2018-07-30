@@ -291,7 +291,7 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/BalloonBreathing"
                 android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/balloon_breathing"
+                app:srcCompat="@drawable/balloon_breathing"
                 tools:ignore="NestedWeights" />
 
             <ImageButton
@@ -312,7 +312,7 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/Counting"
                 android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/count" />
+                app:srcCompat="@drawable/count" />
         </LinearLayout>
 
         <LinearLayout
@@ -385,7 +385,7 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/Drawing"
                 android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/drawing" />
+                app:srcCompat="@drawable/drawing" />
 
             <ImageButton
                 android:id="@+id/btnActivity6"
@@ -395,7 +395,7 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/Yoga"
                 android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/yoga" />
+                app:srcCompat="@drawable/yoga" />
         </LinearLayout>
 
         <LinearLayout
@@ -504,24 +504,24 @@
             android:textAppearance="@style/CalMeTitle"
             android:textStyle="bold" />
 
-        <!--<com.airbnb.lottie.LottieAnimationView-->
-        <!--android:id="@+id/lottieBalloon"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_weight="1"-->
-        <!--android:contentDescription="@string/lblBreathWithMe"-->
-        <!--app:lottie_fileName="data.json"-->
-        <!--tools:ignore="NestedWeights" />-->
-
-
-        <ImageView
-            android:id="@+id/imgBalloon"
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieBalloon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:contentDescription="@string/lblBreathWithMe"
-            app:srcCompat="@drawable/balloon_steps"
+            app:lottie_fileName="balloon.json"
             tools:ignore="NestedWeights" />
+
+
+        <!--<ImageView-->
+        <!--android:id="@+id/imgBalloon"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1"-->
+        <!--android:contentDescription="@string/lblBreathWithMe"-->
+        <!--app:srcCompat="@drawable/balloon_steps"-->
+        <!--tools:ignore="NestedWeights" />-->
 
 
         <TextView

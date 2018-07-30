@@ -12,6 +12,7 @@
 
     <color name="colorPrimaryDarkest">#FF01579b</color>
     <color name="colorPrimaryLight">#FF81d4fa</color>
+    <color name="colorPrimaryLightest">#e0f7fa</color>
     <color name="colorPrimaryText">#FF000000</color>
     <color name="colorSecondaryText">#80000000</color>
     <color name="PaintRed">#d50000</color>

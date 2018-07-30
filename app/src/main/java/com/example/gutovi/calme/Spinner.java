@@ -19,6 +19,7 @@ public class Spinner extends AppCompatActivity implements GestureDetector.OnGest
 
     ImageView Spinner;
     float lastAngle = -1;
+    float angle = 0;
     float changeAngle;
 
     @Override
@@ -45,17 +46,24 @@ public class Spinner extends AppCompatActivity implements GestureDetector.OnGest
 
     @Override
     public boolean onFling(MotionEvent event1, MotionEvent event2,float velocityX, float velocityY) {
-        int[] Pos = new int[2];
-        Spinner.getLocationOnScreen(Pos);
-        Log.d("X", "X velocity: " + velocityX);
-        Log.d("PosX", ": " + Pos[0]);
-        Log.d("PosY", ": " + Pos[1]);
+        int[] ImagePos = new int[2];
+        Spinner.getLocationOnScreen(ImagePos);
 
-
-        final float angle = changeAngle+velocityX/2;
+        //angle = changeAngle+velocityX/2;
         final float pivotX = Spinner.getWidth() / 2;
         final float pivotY = Spinner.getHeight() / 2;
         Animation animRotate;
+
+
+        if(Math.abs(velocityX)> Math.abs(velocityY)){
+            if (event1.getY()<=(ImagePos[1]+Spinner.getHeight()/2)) angle = changeAngle+velocityX/2;
+            else  angle = -(changeAngle+velocityX/2);
+        }
+        else{
+            if (event1.getX()>=(ImagePos[0]+Spinner.getWidth()/2)) angle = changeAngle+velocityY/2;
+            else  angle = -(changeAngle+velocityY/2);
+        }
+
 
         if (Spinner.getAnimation() == null) {
             animRotate = new RotateAnimation(lastAngle, angle, pivotX, pivotY) {
@@ -83,8 +91,10 @@ public class Spinner extends AppCompatActivity implements GestureDetector.OnGest
             };
         }
         //lastAngle = angle;
-        animRotate.setDuration(Math.abs(Math.round(velocityX*2)));
+        if(Math.abs(velocityX)> Math.abs(velocityY)) animRotate.setDuration(Math.abs(Math.round(velocityX*2)));
+        else  animRotate.setDuration(Math.abs(Math.round(velocityY*2)));
         if (animRotate.getDuration()< 2000) animRotate.setDuration(2000);
+
         animRotate.setFillAfter(true);
         animRotate.setInterpolator(new DecelerateInterpolator());
 
@@ -108,8 +118,6 @@ public class Spinner extends AppCompatActivity implements GestureDetector.OnGest
 
     @Override
     public boolean onSingleTapUp(MotionEvent event) {
-        Log.d("angle", Float.toString(lastAngle));
-        Log.d("angle", Float.toString(changeAngle));
         Spinner.clearAnimation();
         changeAngle=0;
         return true;
